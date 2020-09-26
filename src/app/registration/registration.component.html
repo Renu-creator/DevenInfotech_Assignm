@@ -1,0 +1,102 @@
+<h3 class="text-center">{{title}}</h3>
+
+<hr>
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+
+    <div class="col-md-6">
+
+
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="fnm" [(ngModel)]="RegistrationModel.fnm" #fnm="ngModel" 
+                [ngClass]="{'is-invalid':f.submitted && fnm.invalid}"   class ="form-control" placeholder="First-name" required>
+                <div class="invalid-feedback">
+                    <div>first name required</div>    
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Middle Name</label>
+                <input type="text" name="mnm" [(ngModel)]="RegistrationModel.mnm" #mnm="ngModel" 
+                [ngClass]="{'is-invalid':f.submitted && mnm.invalid}"   class ="form-control" placeholder="First-name" required>
+                <div class="invalid-feedback">
+                    <div>middle name required</div>    
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lnm" [(ngModel)]="RegistrationModel.lnm" #lnm="ngModel" 
+                [ngClass]="{'is-invalid':f.submitted && lnm.invalid}"   class ="form-control" placeholder="First-name" required>
+                <div class="invalid-feedback">
+                    <div>last name required</div>    
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label>Gender</label>
+                   <div class="form-control">
+                      
+                          <input type="radio" value="Male" [(ngModel)]="RegistrationModel.gen" #gen="ngModel"
+                          name="gen" required> Male
+                          
+                         
+
+                      
+                          <input type="radio" value="Female" [(ngModel)]="RegistrationModel.gen" #gen="ngModel"
+                          name="gen" required> Female
+                         
+                  </div>
+                  <div [hidden]="!gen.hasError('required')">
+                    <div>The gender is required</div>    
+                </div>
+            
+             </div>
+
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" name="phno" [(ngModel)]="RegistrationModel.phno" #phno="ngModel" 
+                [ngClass]="{'is-invalid':f.submitted && phno.invalid}"   class ="form-control" placeholder="phone number" required>
+                <div class="invalid-feedback">
+                    <div>phone number required</div>    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea rows="3" name="address" [(ngModel)]="RegistrationModel.address" #address="ngModel" 
+                [ngClass]="{'is-invalid':f.submitted && address.invalid}"   class ="form-control" placeholder="Please Enter Address" required>
+            </textarea>
+                <div class="invalid-feedback">
+                    <div>Address required</div>    
+                </div>
+            </div>
+           
+                   <div class="form-group">
+    <button class="btn btn-primary " name="submit"  type="submit">Submit</button>
+    </div>
+    </form>
+       
+             
+            <hr>
+    
+</div>
+</div>
+</div>
+</div> 
+
+
+
+
+
+
